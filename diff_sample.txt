@@ -1,0 +1,50 @@
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+function-execution-id: XXXXXXXXXXXX
+x-cloud-trace-context: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;o=1
+date: Fri, 04 Jan 2019 17:15:24 GMT
+server: Google Frontend
+content-length: 1591003
+alt-svc: quic=":443"; ma=2592000; v="44,43,39,35"
+
+--- url1
+
++++ url2
+
+@@ -1,4 +1,4 @@
+
+-{'activities': [{'activityId': '1c236a55-5117-44d7-a95f-4ec9234ea6dd',
++{'activities': [{'activityId': '11725db2-8e52-4261-babc-591bec596ac5',
+                  'content': "It's your first day on the job at a pet insurance "
+                             'company. It makes you feel good to know that '
+                             "you're helping owners take better care of their "
+@@ -19,7 +19,7 @@
+
+                  'subType': 'basic',
+                  'topic': "Let's Talk About Multiple Joins in SQL",
+                  'type': 'text'},
+-                {'activityId': '0829aa9c-6189-4a91-b249-6e6af99700d2',
++                {'activityId': 'b0fed776-6e21-4164-8f27-ceb54f00f4a7',
+                  'id': 26,
+                  'objectives': ['Discuss the types of JOINS used to combine '
+                                 'and query tables in SQL',
+@@ -29,7 +29,7 @@
+
+                                 'order to answer sample business questions'],
+                  'subType': 'objectives',
+                  'type': 'text'},
+-                {'activityId': '75ff02e4-e672-4285-8479-c7d5287d3f1d',
++                {'activityId': '7fefa51d-c8a4-4a24-a790-0cb414efbd41',
+                  'id': 1,
+                  'source': {'provider': 'wistia', 'remoteId': '89u7mwmolt'},
+                  'transcript': 'You already know how to join two tables '
+@@ -74,7 +74,7 @@
+
+                                'order in which the tables are joined in the '
+                                'query.\n',
+                  'type': 'video'},
+-                {'activityId': '019e96a3-4039-4152-ab9a-1069a4ba7308',
++                {'activityId': '009e4fff-99b0-4f15-979d-43a510d9def2',
+                  'content': 'Ok, so you are ready to get to work digging into '
+                             'your pet insurance database. You see that the '
+                             'information you need uses the following table '
