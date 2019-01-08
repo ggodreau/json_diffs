@@ -30,6 +30,8 @@ def get_diffs(request):
 
         if fmt == 'html':
 
+            # this doesn't actually remove material, it just prevents it from being parsed
+            # the cleanjunk() function is the thing that actually removes activityID lines from output
             diff = difflib.HtmlDiff(linejunk=(lambda line: False if re.match(r'^.*\b(activityId)\b.*$', line) is None else True))
             resp = make_response(diff.make_file(
                 [cleanjunk(line) for line in pprint.pformat(json.loads(r0.content)).splitlines()[:500]],
