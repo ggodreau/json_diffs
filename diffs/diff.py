@@ -8,21 +8,20 @@ import difflib
 
 def get_diffs(request):
 
-    print(f'request is {request}')
-
     id1 = str(request.args.get('id1'))
     id2 = str(request.args.get('id2'))
     r0 = requests.get('https://ga-create-api.s3.amazonaws.com/' + id1)
-    time.sleep(0.5)
     r1 = requests.get('https://ga-create-api.s3.amazonaws.com/' + id2)
     fmt = request.args.get('fmt')
 
-    print(f'vars: {id1}{id2}{fmt}')
-    print(f'response urls: {r0.url}\n{r1.url}')
-    print(f'response codes: {r0.status_code}{type(r0.status_code)}{r1.status_code}{type(r1.status_code)}')
+#    print(f'request is {request}')
+#    print(f'vars: {id1}{id2}{fmt}')
+#    print(f'response urls: {r0.url}\n{r1.url}')
+#    print(f'response codes: {r0.status_code}{type(r0.status_code)}{r1.status_code}{type(r1.status_code)}')
 
     if r0.status_code == 200 & r1.status_code == 200:
 
+        # optional api with ?fmt=text param for curl use
         if fmt == 'text':
 
             diff = difflib.unified_diff(
@@ -59,6 +58,3 @@ def cleanjunk(line):
         return line
     else:
         return "#"
-    
-
-

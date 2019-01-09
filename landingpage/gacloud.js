@@ -4,28 +4,27 @@ const cors = require('cors');
 const functions = require('firebase-functions');
 
 const app = express()
-let chainer = 'https://us-central1-imag-178020.cloudfunctions.net/chainer'
 
 app.use(cors({ origin: true }))
+
+// landing page
+// the new Buffer could use some cleaning
+// https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_string_encoding
 app.get("/", (req, res) => {
-  let mes = req.query.message;
-  if ( mes == null ){
-    res.set('Content-Type', 'text/html');
-    res.status(200).send(new Buffer('<link rel="shortcut icon" href="https://raw.githubusercontent.com/ggodreau/json_diffs/landingpage/assets/troll.png" /><span><img src="https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png"><h1>trollin</h1></span><form action="https://us-central1-imag-178020.cloudfunctions.net/pyfunc" method="get" enctype="application/json"><input type="text" name="id1" placeholder="first url"><input type="text" name="id2" placeholder="second url"><input type="submit" value="send it"></form>'));
-  }
-  else {
-    callChainer(req, res, mes);
-  }
+  res.set('Content-Type', 'text/html');
+  res.status(200).send(new Buffer('<link rel="shortcut icon" href="https://raw.githubusercontent.com/ggodreau/json_diffs/landingpage/assets/troll.png" /><span><img src="https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png"><h1>myGA Diff Tool</h1></span><form action="https://us-central1-imag-178020.cloudfunctions.net/pyfunc" method="get" enctype="application/json">JSON Path #1: <input type="text" name="id1" placeholder="string-functions-and-case-396.json"><br>JSON Path #2: <input type="text" name="id2" placeholder="string-functions-and-case-3529.json"><br><br><input type="submit" value="diff it up"></form>'));
 });
 
-// the call the form submission goes to
-app.post('*', (req, res) => {
-  let mes2 = req.body.text;
-  res.set('Content-Type', 'text/plain');
-  res.status(200).send(mes2);
-});
+// this is the posting route, kept here for reference
+// this is not used though
+//app.post('*', (req, res) => {
+//  let mes2 = req.body.text;
+//  res.set('Content-Type', 'text/plain');
+//  res.status(200).send(mes2);
+//});
 
 // remove express trailing slash requirement from inbound url
+// express requires trailing slash on the default endpoint, yuck
 const landing = functions.https.onRequest((request, response) => {
   if (!request.path) {
     request.url = `/${request.url}` // prepend '/' to keep query params if any
@@ -36,15 +35,3 @@ const landing = functions.https.onRequest((request, response) => {
 module.exports = {
   landing
 }
-
-// call external api
-callChainer = (req, res, mes) => {
-  request(chainer, function (err, response, body) {
-    if(err){
-      res.status(200).send('shit got fucked');
-    } 
-    else {
-      res.status(200).send(body);
-    }
-  }
-)};
