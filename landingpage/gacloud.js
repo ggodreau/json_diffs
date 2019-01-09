@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
   let mes = req.query.message;
   if ( mes == null ){
     res.set('Content-Type', 'text/html');
-    res.status(200).send(new Buffer('<link rel="shortcut icon" href="https://raw.githubusercontent.com/ggodreau/json_diffs/landingpage/assets/troll.png" /><span><img src="https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png"><h1>trollin</h1></span><form action="https://us-central1-imag-178020.cloudfunctions.net/pyfunc" method="post" enctype="application/json"><input type="text" name="id1" placeholder="first url"><input type="text" name="id2" placeholder="second url"><input type="text" name="fmt" placeholder="html"><input type="submit" value="send it"></form>'));
+    res.status(200).send(new Buffer('<link rel="shortcut icon" href="https://raw.githubusercontent.com/ggodreau/json_diffs/landingpage/assets/troll.png" /><span><img src="https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png"><h1>trollin</h1></span><form action="https://us-central1-imag-178020.cloudfunctions.net/pyfunc" method="get" enctype="application/json"><input type="text" name="id1" placeholder="first url"><input type="text" name="id2" placeholder="second url"><input type="submit" value="send it"></form>'));
   }
   else {
     callChainer(req, res, mes);
