@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <script type="text/babel" data-presets="env,react">
+        const App = () => {
+            return (
+                <div>
+                    <Message
+                    header="Changes in Service"
+                    text="We just updated our privacy policy here to better service our customers."
+                    />
+                </div>
+            );
+        }
+        
+        const Message = (props) => {
+            return (
+                <div className="ui message">
+                    <div className="header">{props.header}</div>
+                    <p>{props.text}</p>
+                </div>
+            );
+        }
+        
+    
+        // Renders the App component into a div with id 'root'
+        ReactDOM.render(<App />, document.querySelector('#root'));
+    </script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.0.0/polyfill.min.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/preset-env-standalone@7/babel-preset-env.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  </head>
+  <body>
+    <!--The App component above will be rendered into this-->
+    <div id="root"></div>
+<!--
+    <div class="ui attached stackable menu">
+      <div class="ui container">
+        <a class="item">
+          <i class="home icon"></i> Home
+        </a>
+        <a class="item">
+          <i class="grid layout icon"></i> Browse
+        </a>
+        <a class="item">
+          <i class="mail icon"></i> Messages
+        </a>
+        <div class="ui simple dropdown item">
+          More
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item"><i class="edit icon"></i> Edit Profile</a>
+            <a class="item"><i class="globe icon"></i> Choose Language</a>
+            <a class="item"><i class="settings icon"></i> Account Settings</a>
+          </div>
+        </div>
+        <div class="right item">
+          <div class="ui input"><input type="text" placeholder="Search..."></div>
+        </div>
+      </div>
+    </div>
+    <div class="ui labeled input">
+      <div class="ui label">
+        http://my.generalassemb.ly/foo/bar
+      </div>
+      <input type="text" placeholder="mysite.com">
+    </div>
+-->
+  </body>
+</html>
