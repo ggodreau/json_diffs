@@ -59,16 +59,23 @@ const payload = `
         </p>
         <div class="two fields">
             <div class="field">
-              <label>File 1</label><input placeholder="stuff.json" type="text" name="id1">
+              <label>File 1</label><input placeholder="path-to-lesson-1234.json" type="text" name="id1">
             </div>
             <div class="field">
-              <label>File 2</label><input placeholder="stuff.json" type="text" name="id2">
+              <label>File 2</label><input placeholder="path-to-lesson-5678.json" type="text" name="id2">
             </div>
         </div>
         <div class="ui submit button bye" onClick="this.parentNode.submit()">
-          Get Diffs
+          Go ahead, make my diff
         </div>
       </form>
+      <div style="padding: 20px 0px 0px 10px">
+        <details>
+          <summary>Click 4 halp</summary>
+          <p>Copy the last part of the URL from the lessons you'd like to compare (highlighted in yellow below). Just enter the information after the slash, <i>not</i> the whole URL. The lesson entered into the 'File 1' field will be the resultant diff pane on the left, and the lesson entered into 'File 2' will be the resultant diff pane on the right.</p>
+          <img src="https://raw.githubusercontent.com/ggodreau/json_diffs/1c29b454796be22f35c8297b9d3b2ff6eb1b64ef/assets/ifu.png">
+        </details>
+      </div>
     </div>
   </div>
 
