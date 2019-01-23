@@ -53,16 +53,16 @@ const payload = `
       <form action="https://us-central1-imag-178020.cloudfunctions.net/pyfunc" method="get" enctype="application/json">
         <p style="align: left;" class="ui header">
           myGA DiffTool
-          <a href="https://www.github.com/ggodreau/json_diffs">
+          <a href="https://www.github.com/ggodreau/">
           <img class="box" style="float: right; align: top;" src="https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png">
           </a>
         </p>
         <div class="two fields">
             <div class="field">
-              <label>File 1</label><input placeholder="path-to-lesson-1234.json" type="text" name="id1">
+              <label>Old</label><input placeholder="path-to-lesson-1234.json" type="text" name="id1">
             </div>
             <div class="field">
-              <label>File 2</label><input placeholder="path-to-lesson-5678.json" type="text" name="id2">
+              <label>New</label><input placeholder="path-to-lesson-5678.json" type="text" name="id2">
             </div>
         </div>
         <div class="ui submit button bye" onClick="this.parentNode.submit()">
@@ -71,8 +71,8 @@ const payload = `
       </form>
       <div style="padding: 20px 0px 0px 10px">
         <details>
-          <summary>Click 4 halp</summary>
-          <p>Copy the last part of the URL from the lessons you'd like to compare (highlighted in yellow below). Just enter the information after the slash, <i>not</i> the whole URL. The lesson entered into the 'File 1' field will be the resultant diff pane on the left, and the lesson entered into 'File 2' will be the resultant diff pane on the right.</p>
+          <summary>Clic 4 halp</summary>
+          <p>Copy the last part of the URL from the lessons you'd like to compare (highlighted in yellow below). Just enter the information after the slash, <i>not</i> the whole URL. The lesson entered into the 'Old' field will be the resultant diff pane on the left, and the lesson entered into 'New' will be the resultant diff pane on the right.</p>
           <img src="https://raw.githubusercontent.com/ggodreau/json_diffs/1c29b454796be22f35c8297b9d3b2ff6eb1b64ef/assets/ifu.png">
         </details>
       </div>
@@ -83,11 +83,6 @@ const payload = `
 
 </html>
 `;
-
-//OLD HTML
-//<link rel="shortcut icon" href="https://raw.githubusercontent.com/ggodreau/json_diffs/landingpage/assets/troll.png" />
-//<span><img src="https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png">
-//<h1>myGA Diff Tool</h1></span><form action="https://us-central1-imag-178020.cloudfunctions.net/pyfunc" method="get" enctype="application/json">JSON Path #1: <input type="text" name="id1" placeholder="string-functions-and-case-396.json"><br>JSON Path #2: <input type="text" name="id2" placeholder="string-functions-and-case-3529.json"><br><br><input type="submit" value="diff it, bitch"></form>
 
 // landing page
 app.get("/", (req, res) => {
